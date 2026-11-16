@@ -54,17 +54,16 @@ public class Array {
     }
 
     public void removerPorId(int id){
-        boolean validador = false;
-        for(int i=0; i < controle; i++){
+        for(int i=0; i <controle; i++){
             if(id == lista[i].getId()){
-                validador = true;
+                for(int j=i;j<controle-1;j++){
+                    lista[j]=lista[j+1];
+                }
+                controle--;
+                lista[controle]=null;
+                return ;
+
             }
-            if(validador){
-                lista[i] = lista[i+1];
-            }
-        }
-        if(validador){
-            controle--;
         }
     }
 
